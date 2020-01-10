@@ -134,8 +134,12 @@ def _create_engine():
     echo = input('Echo? [Y/n] >>> ').lower() in {'', 'y'}
     echo_pool = input('Echo pool? [y/N] >>> ').lower() in {'y'}
 
-    url = _URL(drivername, username=username, password=password, host=hostname,
-               port=port, query=query, database=database)
+    if drivername == 'sqlite':
+        url = 'sqlite://'
+
+    else:
+        url = _URL(drivername, username=username, password=password,
+                   host=hostname, port=port, query=query, database=database)
     return create_engine(url, echo=echo, echo_pool=echo_pool)
 
 engine = _create_engine()
