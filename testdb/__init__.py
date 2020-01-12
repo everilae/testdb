@@ -118,8 +118,7 @@ def _create_engine():
     args = None
     hostname = None
     port = None
-    password = _secrets.token_urlsafe()
-    print(f'Superuser password: {password}')
+    password = None
 
     choice = int(input(_format_db_menu(_DBS)) or '0')
     (_, drivername,
@@ -127,19 +126,18 @@ def _create_engine():
      query, env_factory) = _DBS[choice]
 
     if image:
+        password = _secrets.token_urlsafe()
         name = 'testdb-' + _drivername_to_name(drivername)
         hostname, port = _start_container(
             image, name, ports, env=env_factory(username, password, database))
 
+        print(f'Superuser password: {password}')
+
     echo = input('Echo? [Y/n] >>> ').lower() in {'', 'y'}
     echo_pool = input('Echo pool? [y/N] >>> ').lower() in {'y'}
 
-    if drivername == 'sqlite':
-        url = 'sqlite://'
-
-    else:
-        url = _URL(drivername, username=username, password=password,
-                   host=hostname, port=port, query=query, database=database)
+    url = _URL(drivername, username=username, password=password,
+               host=hostname, port=port, query=query, database=database)
     return create_engine(url, echo=echo, echo_pool=echo_pool)
 
 engine = _create_engine()
