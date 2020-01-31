@@ -10,6 +10,8 @@ With all the extras:
 pip install 'git+https://github.com/everilae/testdb.git#egg=testdb[postgres,mysql,mssql]'
 ```
 
+Docker is required to run PostgreSQL, MySQL, and SQL Server. The tool will launch a container after selecting the backend, if needed.
+
 # Usage
 
 ```python
