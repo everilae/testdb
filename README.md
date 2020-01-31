@@ -6,13 +6,13 @@ Test tool for various DBMS, and SQLAlchemy
 
 With all the extras:
 
-```
+```bash
 pip install 'git+https://github.com/everilae/testdb.git#egg=testdb[postgres,mysql,mssql]'
 ```
 
 # Usage
 
-```
+```python
 In [1]: from testdb import *                                                                                                                                                  
 Choose database backend (default SQLite):
  [0] SQLite
