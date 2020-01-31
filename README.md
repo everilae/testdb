@@ -10,7 +10,7 @@ With all the extras:
 pip install 'git+https://github.com/everilae/testdb.git#egg=testdb[postgres,mysql,mssql]'
 ```
 
-Docker is required to run PostgreSQL, MySQL, and SQL Server. The tool will launch a container after selecting the backend, if needed. [unixODBC](http://www.unixodbc.org/) and [Microsoft ODBC Driver for SQL Server](https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15) are required for SQL Server and PyODBC.
+Docker is required to run PostgreSQL, MySQL, and SQL Server. The tool will launch a container after selecting the backend, if needed. [Microsoft ODBC Driver 17 for SQL Server](https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15) is required for SQL Server and PyODBC.
 
 # Usage
 
