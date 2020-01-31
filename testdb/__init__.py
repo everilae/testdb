@@ -25,7 +25,7 @@ try:
 except NameError:
     pass
 
-_POSTGRES_DATABASE = None
+_POSTGRES_DATABASE = 'postgres'
 _POSTGRES_USER = 'postgres'
 _POSTGRES_PORT = (5432, 54321)
 _POSTGRES_IMAGE = 'postgres:12-alpine'
@@ -35,7 +35,7 @@ _MYSQL_USER = 'mysli'
 _MYSQL_PORT = (3306, 33060)
 _MYSQL_IMAGE = 'mysql/mysql-server:latest'
 
-_MSSQL_DATABASE = None
+_MSSQL_DATABASE = 'tempdb'
 _MSSQL_USER = 'sa'
 _MSSQL_PORT = (1433, 14333)
 _MSSQL_IMAGE = 'mcr.microsoft.com/mssql/server:2017-latest'
