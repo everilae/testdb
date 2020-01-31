@@ -1,6 +1,6 @@
 # testdb
 
-Test tool for various DBMS, and SQLAlchemy
+Test tool for various DBMS, and [SQLAlchemy](https://www.sqlalchemy.org/)
 
 # Installing
 
